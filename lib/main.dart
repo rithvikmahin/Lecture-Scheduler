@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
         ]
       ),
 
-      Row(
+      Row (
         mainAxisAlignment: MainAxisAlignment.center, 
         children: [
           OutlineButton (
@@ -62,3 +62,5 @@ class MyApp extends StatelessWidget {
     ]
   );
 }
+
+class ClassB
