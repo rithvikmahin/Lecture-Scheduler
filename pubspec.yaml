@@ -38,6 +38,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  fonts:
+    -  family: Montserrat
+       fonts: 
+         -  asset: fonts/Montserrat-Regular.ttf
   assets:
     -  images/logo.jpg
 

@@ -9,13 +9,28 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Base-Container',
       home: Scaffold(
-        body: imageSection
+        backgroundColor: Colors.white,
+        body: Column(
+          children: [
+            imageSection,
+            courseSelection
+          ],
+        )
       )
       );
   }
 
   final Widget imageSection = Container(
     child: Image.asset('images/logo.jpg')
+  );
+
+  final Widget courseSelection = Container(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center, 
+      children: [
+        Text('PLEASE SELECT YOUR CLASS')
+      ],
+    )
   );
 }
 
