@@ -1,4 +1,4 @@
-# hackillinoiscollaborationapp
+# Lecture-Scheduler
 
 A new Flutter project.
 
