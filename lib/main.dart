@@ -6,15 +6,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Welcome to Flutter',
+      debugShowCheckedModeBanner: false,
+      title: 'Base-Container',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: const Center(
-          child: const Text('Hello World'),
-        ),
-      ),
-    );
+        body: imageSection
+      )
+      );
   }
+
+  final Widget imageSection = Container(
+    child: Image.asset('images/logo.jpg')
+  );
 }
+
