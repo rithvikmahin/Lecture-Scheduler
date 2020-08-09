@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  video_player:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -43,7 +44,7 @@ flutter:
        fonts: 
          -  asset: fonts/Montserrat-Regular.ttf
   assets:
-    -  images/logo.jpg
+    -  images/logo2.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
