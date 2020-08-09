@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         body: Column(
           children: [
-            imageSection,
+            Center(
+              child: imageSection
+            ),
             courseSelection
           ],
 
@@ -35,12 +37,20 @@ class MyApp extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center, 
         children: [
           Text(
-            'Please select your class',
-            style: TextStyle(fontFamily: 'Montserrat'))
+            'P L E A S E  S E L E C T  Y O U R  C L A S S',
+            style: TextStyle(fontFamily: 'Montserrat', fontSize: 10))
         ]
       ),
+      ClassButton(),
+      ClassButton()
+    ]
+  );
+}
 
-      Row (
+class ClassButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
         mainAxisAlignment: MainAxisAlignment.center, 
         children: [
           OutlineButton (
@@ -58,9 +68,6 @@ class MyApp extends StatelessWidget {
             )
           )
         ]
-      ) 
-    ]
-  );
+    ); 
+  }
 }
-
-class ClassButton extends 
