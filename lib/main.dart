@@ -6,68 +6,55 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Base-Container',
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        body: Column(
-          children: [
-            Center(
-              child: imageSection
-            ),
-            courseSelection
-          ],
-
-        )
-      )
-      );
+        debugShowCheckedModeBanner: false,
+        title: 'Base-Container',
+        home: Scaffold(
+            backgroundColor: Colors.white,
+            body: Column(
+              children: [Center(child: imageSection), courseSelection],
+            )));
   }
 
   final Widget imageSection = Container(
-    child: Image.asset(
-      'images/logo.jpg',
-      height: 350,
-      width: 400,
-      )
-  );
+      child: Image.asset(
+    'images/logo.jpg',
+    height: 350,
+    width: 400,
+  ));
 
-  final Widget courseSelection = Column (
-    children: [
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center, 
-        children: [
-          Text(
-            'P L E A S E  S E L E C T  Y O U R  C L A S S',
-            style: TextStyle(fontFamily: 'Montserrat', fontSize: 10))
-        ]
-      ),
-      ClassButton(),
-      ClassButton()
-    ]
-  );
+  final Widget courseSelection = Column(children: [
+    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Text('P L E A S E  S E L E C T  Y O U R  C L A S S',
+          style: TextStyle(fontFamily: 'Montserrat', fontSize: 10))
+    ]),
+    ClassButton("CS 125"),
+    ClassButton("Math 241")
+  ]);
 }
 
 class ClassButton extends StatelessWidget {
+  String className;
+  ClassButton(String className) {
+    this.className = className;
+  }
   @override
   Widget build(BuildContext context) {
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.center, 
-        children: [
-          OutlineButton (
-            onPressed: () {},
-            borderSide: BorderSide (
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      OutlineButton(
+          onPressed: () {},
+          borderSide: BorderSide(
             color: Color(0xFF0C0C72), //Color of the border
             style: BorderStyle.solid, //Style of the border
             width: 1.2, //width of the border
-            ),
-            color: Colors.white,
-            child: Container (
-              child: const Text (
-                'CS 125', 
-                style: TextStyle(color: Color(0xFF0C0C72), fontFamily: 'Montserrat', fontWeight: FontWeight.bold)),
-            )
-          )
-        ]
-    ); 
+          ),
+          color: Colors.white,
+          child: Container(
+            child: const Text('CS 125',
+                style: TextStyle(
+                    color: Color(0xFF0C0C72),
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.bold)),
+          ))
+    ]);
   }
 }
