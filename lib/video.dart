@@ -1,5 +1,5 @@
 
-import 'dart:async';
+/**import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -97,6 +97,44 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}**/
+import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Video(),
+    );
+  }
+}
+
+class Video extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    YoutubePlayerController _controller = YoutubePlayerController(
+      initialVideoId: '43wPVHRfTrk',
+      flags: YoutubePlayerFlags(
+        autoPlay: true,
+        mute: false,
+      ),
+    );
+
+    return Scaffold(
+      body: Center(
+        child: YoutubePlayer(
+          controller: _controller,
+          showVideoProgressIndicator: true,
+          progressIndicatorColor: Colors.amber,
+        ),
+      ),
     );
   }
 }
