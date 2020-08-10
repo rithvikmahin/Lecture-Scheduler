@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './video.dart';
 
 void main() => runApp(MyApp());
 
@@ -54,7 +55,10 @@ class ClassButton extends StatelessWidget {
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       OutlineButton( // Using outline buttons
           onPressed: () {
-
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => VideoPage())
+            );
           },
           borderSide: BorderSide(
             color: Color(0xFF0C0C72), // Color of the border.
