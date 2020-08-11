@@ -5,21 +5,28 @@ void main() {
   runApp(VideoPage());
 }
 
+// ignore: must_be_immutable
 class VideoPage extends StatelessWidget {
   @override
+  String url;
+  VideoPage({Key key, @required this.url}) : super(key: key);
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Video(),
+      home: Video(url: url),
     );
   }
 }
 
+// ignore: must_be_immutable
 class Video extends StatelessWidget {
   @override
+  String url;
+  Video({Key key, @required this.url}) : super(key: key);
+
   Widget build(BuildContext context) {
     YoutubePlayerController _controller = YoutubePlayerController(
-      initialVideoId: '43wPVHRfTrk',
+      initialVideoId: url,
       flags: YoutubePlayerFlags(
         autoPlay: true,
         mute: false,

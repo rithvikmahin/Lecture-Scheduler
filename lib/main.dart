@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './video.dart';
+import 'package:auto_orientation/auto_orientation.dart';
+import 'dart:convert';
 
 void main() => runApp(MyApp());
 
@@ -14,11 +16,12 @@ class MyApp extends StatelessWidget {
             body: Column(
               // Sets the image and course selection in a column.
               children: [
-                SizedBox(height: 60),
+                SizedBox(height: 70),
                 Center(child: imageSection), 
                 courseSelection
                 ],
-            )));
+            ))
+    );
   }
 
   final Widget imageSection = Container(
@@ -52,12 +55,19 @@ class ClassButton extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    String urls = '{"CS 125" : {"1" : "-HDThjCQRgg"}, "MATH 241": {"1": ""}}';
+    Map urlsJson = jsonDecode(urls);
+    String url = urlsJson[className]["1"];
+    AutoOrientation.portraitUpMode();  
+
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       OutlineButton( // Using outline buttons
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => VideoPage())
+              MaterialPageRoute(
+                builder: (context) => VideoPage(url: url)
+                )
             );
           },
           borderSide: BorderSide(

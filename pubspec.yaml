@@ -22,6 +22,7 @@ environment:
 
 dependencies:
   youtube_player_flutter: ^7.0.0+7
+  auto_orientation: ^1.0.6
   flutter:
     sdk: flutter
   video_player:
