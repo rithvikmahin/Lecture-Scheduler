@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
     SizedBox(height: 24),
     ClassButton("CS 125"),
     SizedBox(height: 16),
-    ClassButton("MATH 241")
+    ClassButton("STAT 200")
   ]);
 }
  /* 
@@ -63,17 +63,41 @@ class ClassButton extends StatelessWidget {
     SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,
       ]);
-    String urls = '{"CS 125" : {"1" : "-HDThjCQRgg"}, "MATH 241": {"1": ""}}';
+
+    String urls = '{"CS 125" : {"1" : "-HDThjCQRgg"}, "STAT 200": {"1": "7OJrcBpYuVk"}}';
     Map urlsJson = jsonDecode(urls);
     String url = urlsJson[className]["1"]; 
+
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       OutlineButton( // Using outline buttons
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => VideoPage(url: url)
-                )
+            showDialog(
+              context: context,
+              builder: (BuildContext context){
+                return AlertDialog(
+                  title: Text(className, style: TextStyle(
+                    color: Color(0xFF0C0C72), // Color of the Text.
+                    fontFamily: 'Montserrat', // Font of the Text.
+                    fontWeight: FontWeight.bold)),
+                  content: Text("• This is the lecture from 08/14/2020. \n• The current lecture cycle is from 8 AM to 9 AM. \T• he next lecture starts at 10 AM.", style: TextStyle(
+                    fontFamily: 'Montserrat', // Font of the Text.
+                    fontWeight: FontWeight.bold)),
+                  actions: [
+                    RaisedButton(
+                      color: Color(0xFF0C0C72),
+                      child: Text('JOIN NOW', style: TextStyle(color: Colors.white)),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => VideoPage(url: url)
+                          )
+                        );
+                      },
+                    )
+                  ]
+                );
+              }
             );
           },
           borderSide: BorderSide(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(VideoPage());
@@ -11,9 +12,13 @@ class VideoPage extends StatelessWidget {
   String url;
   VideoPage({Key key, @required this.url}) : super(key: key);
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+      ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Video(url: url),
+      home: Video(url: url)
     );
   }
 }
@@ -25,11 +30,16 @@ class Video extends StatelessWidget {
   Video({Key key, @required this.url}) : super(key: key);
 
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+      ]);
     YoutubePlayerController _controller = YoutubePlayerController(
       initialVideoId: url,
       flags: YoutubePlayerFlags(
         autoPlay: true,
         mute: false,
+        hideControls: true,
       ),
     );
 
