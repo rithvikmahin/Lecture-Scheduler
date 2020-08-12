@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './video.dart';
-import 'package:auto_orientation/auto_orientation.dart';
+import 'package:flutter/services.dart' ;
 import 'dart:convert';
 
 void main() => runApp(MyApp());
@@ -8,12 +8,17 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+      ]);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Base-Container',
         home: Scaffold(
+            resizeToAvoidBottomInset: false,
+            resizeToAvoidBottomPadding: false,
             backgroundColor: Colors.white,
-            body: Column(
+            body: SingleChildScrollView(child: Column(
               // Sets the image and course selection in a column.
               children: [
                 SizedBox(height: 70),
@@ -21,7 +26,7 @@ class MyApp extends StatelessWidget {
                 courseSelection
                 ],
             ))
-    );
+    ));
   }
 
   final Widget imageSection = Container(
@@ -55,11 +60,12 @@ class ClassButton extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+      ]);
     String urls = '{"CS 125" : {"1" : "-HDThjCQRgg"}, "MATH 241": {"1": ""}}';
     Map urlsJson = jsonDecode(urls);
-    String url = urlsJson[className]["1"];
-    AutoOrientation.portraitUpMode();  
-
+    String url = urlsJson[className]["1"]; 
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       OutlineButton( // Using outline buttons
           onPressed: () {
