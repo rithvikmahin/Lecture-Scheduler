@@ -12,10 +12,16 @@ class VideoPage extends StatelessWidget {
   String url;
   VideoPage({Key key, @required this.url}) : super(key: key);
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-        DeviceOrientation.landscapeLeft,
-        DeviceOrientation.landscapeRight,
-      ]);
+    if (MediaQuery.of(context).orientation == Orientation.portrait) {
+        SystemChrome.setPreferredOrientations ([
+          DeviceOrientation.portraitUp,
+        ]);
+    } else {
+      SystemChrome.setPreferredOrientations([
+          DeviceOrientation.landscapeLeft,
+          DeviceOrientation.landscapeRight,
+        ]);
+    }
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Video(url: url)
@@ -30,10 +36,6 @@ class Video extends StatelessWidget {
   Video({Key key, @required this.url}) : super(key: key);
 
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations([
-        DeviceOrientation.landscapeLeft,
-        DeviceOrientation.landscapeRight,
-      ]);
     YoutubePlayerController _controller = YoutubePlayerController(
       initialVideoId: url,
       flags: YoutubePlayerFlags(
