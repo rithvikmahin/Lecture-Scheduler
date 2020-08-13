@@ -57,6 +57,7 @@ class ClassButton extends StatelessWidget {
   ClassButton(String className) { // Constructor for text.
     this.className = className;
   }
+  var dateTime = DateTime.now();
   
   @override
   Widget build(BuildContext context) {
@@ -79,7 +80,7 @@ class ClassButton extends StatelessWidget {
                     color: Color(0xFF0C0C72), // Color of the Text.
                     fontFamily: 'Montserrat', // Font of the Text.
                     fontWeight: FontWeight.bold)),
-                  content: Text("• This is the lecture from 08/14/2020. \n• The current lecture cycle is from 8 AM to 9 AM. \n• The next lecture starts at 10 AM.", style: TextStyle(
+                  content: Text("• This is the lecture from 08/14/2020. \n\n• The current lecture cycle is from 8 AM to 9 AM. \n\n• The next lecture starts at 10 AM.", style: TextStyle(
                     fontFamily: 'Montserrat', height: 1.5)),
                   actions: [
                     RaisedButton(

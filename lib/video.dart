@@ -34,12 +34,16 @@ class Video extends StatelessWidget {
         DeviceOrientation.landscapeLeft,
         DeviceOrientation.landscapeRight,
       ]);
+    var dateTime = DateTime.now();
+    int currentSeconds = dateTime.minute * 60;
+    
     YoutubePlayerController _controller = YoutubePlayerController(
       initialVideoId: url,
       flags: YoutubePlayerFlags(
         autoPlay: true,
         mute: false,
         hideControls: true,
+        startAt: currentSeconds
       ),
     );
 
