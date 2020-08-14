@@ -4,4 +4,8 @@ An application that reorients lecture timings to a student's timezone to provide
 ## Getting Started
 Run the app on your phone, and choose a class in order to get access to that lecture. As this is a lecture everyone will be watching, it would add you at the time this lecture is currently at. 
 
+### Lecture Scheduler in Images
+Home screen:
+![imagine1](https://user-images.githubusercontent.com/55002654/90280515-ae55d280-de88-11ea-8f28-a862a40d2de7.jpg)
+Class information:
 
