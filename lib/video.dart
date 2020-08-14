@@ -11,6 +11,11 @@ class VideoPage extends StatelessWidget {
   @override
   String url;
   VideoPage({Key key, @required this.url}) : super(key: key);
+  var dateTime = DateTime.now();
+  int currentMin = dateTime.minute;
+  if (currentMin > 50) {
+    url = tvoWb50B2Ho;
+  }
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
         DeviceOrientation.landscapeLeft,
