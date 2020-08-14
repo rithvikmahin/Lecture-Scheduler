@@ -1,16 +1,7 @@
 # Lecture-Scheduler
-
-A new Flutter project.
+An application reorients lecture timings to a student's timezone to provide the atmosphere of an actual lecture, in order to improve their productivity and punctuality.
 
 ## Getting Started
+Run the app on your phone, and choose a class in order to get access to that lecture. As this is a lecture everyone will be watching, it will join you at the time this lecture is currently at. 
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
