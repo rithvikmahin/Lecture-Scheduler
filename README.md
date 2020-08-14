@@ -8,4 +8,4 @@ Run the app on your phone, and choose a class in order to get access to that lec
 Home screen:
 ![imagine1](https://user-images.githubusercontent.com/55002654/90280515-ae55d280-de88-11ea-8f28-a862a40d2de7.jpg)
 Class information:
-
+![imagine2](https://user-images.githubusercontent.com/55002654/90280722-0ee50f80-de89-11ea-9106-0e778ce74861.jpg)
